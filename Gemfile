@@ -84,6 +84,7 @@ group :development do
   # gem "spring"
   # letter opener
   gem 'letter_opener'
+  # rspec
 end
 
 group :test do
