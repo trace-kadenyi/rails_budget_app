@@ -3,4 +3,5 @@ class Category < ApplicationRecord
   has_many :expenditures, foreign_key: :category_id, dependent: :destroy
 
   validates :name, presence: true, length: { in: 1..80 }
+  validates :icon, presence: true
 end
