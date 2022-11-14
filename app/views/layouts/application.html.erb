@@ -14,13 +14,7 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-   <% if user_signed_in? %>
-      <a href="/">Home</a>
-      <a href="/categories">Categories</a>
-    <% else %>
-      <a href="/users/sign_in">Sign In</a>
-      <a href="/users/sign_up">Sign Up</a>
-    <% end %>
+   <%= render "layouts/landingpage" %>
 
 
     <%= yield %>
