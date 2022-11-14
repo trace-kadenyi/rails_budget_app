@@ -1,0 +1,32 @@
+<div class='section'>
+<h2 class='signup-head'>Sign Up</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs signup">
+    <%= f.input :name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "name" }%>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+  </div>
+
+  <div class="form-actions">
+        <%= f.button :submit, class: 'button is-dark signup_btn' %>
+
+  </div>
+<% end %>
+</div>
+
+<%= render "devise/shared/links" %>

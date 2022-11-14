@@ -1,3 +1,6 @@
+<%# only appears if user is not signed in %>
+
+<% if !user_signed_in? %>
 <div class='section splash'>
   <h1 class='app_name'>SmartMoney</h1>
   <div class='field splash_field'>
@@ -7,6 +10,7 @@
     <%= link_to 'SIGN UP', '/users/sign_up', class: 'button is-secondary is-light' %>
   </div>
 </div>
+<% end %>
 
 
 
