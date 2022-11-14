@@ -85,7 +85,6 @@ group :development do
   # letter opener
   gem 'letter_opener'
   # rspec
-  gem 'rspec-rails'
 end
 
 group :test do
