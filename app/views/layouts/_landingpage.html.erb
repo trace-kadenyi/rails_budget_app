@@ -15,9 +15,8 @@
       <%# menu %>
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-          
-            <a class='navbar-item' href='/'>Home</a>
-            <a class='navbar-item' href='/foods'>Categories</a>
+
+            <%= link_to "Categories", categories_path, class: "navbar-item" %>
         </div>
       <%# user %>
           <%= link_to(destroy_user_session_path, {:class => "nav-link", :method => :delete}) do  %>
