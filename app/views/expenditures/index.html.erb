@@ -1,0 +1,10 @@
+
+<h1>Transactions</h1>
+
+<div id="records">
+  <% @expenditures.each do |expenditure| %>
+    <%= render expenditure %>
+    <%= link_to "View", category_expenditures_url%>
+  <% end %>
+</div>
+

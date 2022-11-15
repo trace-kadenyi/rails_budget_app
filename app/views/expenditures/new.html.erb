@@ -1,0 +1,20 @@
+<nav class="header-categories d-flex flex-center">
+  <div class="icons">
+    <%= link_to  categories_path(@category) do %>
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    <% end %>
+  </div>
+  <h1 class="transaction-header-nav">NEW TRANSACTION</h1>
+  <div class="actions-save">
+  <input type="submit" name="commit" value="save" class="login-button new-edit-cat" form="new-tran-from" data-disable-with="Log in">
+  </div>
+</nav>
+  
+  <%= render "form", expenditure: @expenditure, category: @category %>
+  
+  <br>
+  
+  <div class="">
+    <% link_to "", category_expenditures_path(@category, @expenditure), class: "fa fa-arrow-left" %>
+    <% link_to "<<- Categories", categories_path %>
+  </div>

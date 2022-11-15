@@ -1,0 +1,29 @@
+<nav class="header-categories d-flex flex-center">
+  <div class="icons">
+    <%= link_to  categories_path do %>
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    <% end %>
+  </div>
+  <h1>Transaction details</h1>
+</nav>
+
+<div class="transactions show d-flex"> 
+  <h2></h2>
+  <ul class="categoies-records">
+    <li id="category-record" class="show">
+     <%= render @expenditure %>
+
+      <ul>
+        <li class='record d-flex flex-center'>
+          <p> <strong>Create Date: </strong> <p>
+          <span class="date d-flex"> <%= @expenditure.created_at.strftime('%Y') %>
+            <span>_<%= @expenditure.created_at.to_formatted_s(:short) %></span>
+          </span>
+        </li>
+        <div class="btns-record d-flex flex-center">
+          <%=button_to 'Delete', {:controller => :expenditures, :action => 'destroy', :id => @expenditure.id}, :method => :delete %>
+        </div>
+      </ul>
+    </li>
+  </ul>
+</div>
