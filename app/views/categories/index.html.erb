@@ -1,0 +1,39 @@
+<section class='section cats-sect'>
+  <h1 class='title is-size-1 has-text-centered mt-5'>
+   Categories
+  </h1>
+  <div class='container cat-sect'>
+    <% @categories.each do |category| %>
+      <div class='card'>
+        <div class='card-content'>
+          <div class='media'>
+            <div class='media-content'>
+              <div class='title-icon mb-5'>
+                <img src="<%= category.icon %>" alt="<%= category.name %>" class="image is-64x64">
+                <h2 class='subtitle is-5 cat_head'><%= link_to category.name, category_path(category) %></h2>
+                <p>Amount: </p>
+              </div>
+              <div class='actions mt-5'>
+                <span class='subtitle is-5'>
+                <%# link to edit %>
+                <%= link_to 'EDIT', edit_category_path(category), class: 'button is-primary is-small' %>
+                </span>          
+                <span class='subtitle is-5'>
+                  <%= link_to 'REMOVE', category_path(category.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'button is-danger is-small' %>
+                </span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%# link to add new category %>
+   <div class='level-right'>
+    <p class='level-item'>
+      <%= link_to "Add New Category", new_category_path, class: 'button is-primary add_cat' %>
+    </p>
+  </div>
+</section>
+
