@@ -28,5 +28,10 @@ RSpec.describe Category, type: :model do
       category = Category.new(name: 'a' * 81, icon: 'icon')
       expect(category).to_not be_valid
     end
+
+    it 'is not valid with a description longer than 150 characters' do
+      category = Category.new(name: 'name', icon: 'icon', description: 'a' * 151)
+      expect(category).to_not be_valid
+    end
   end
 end
