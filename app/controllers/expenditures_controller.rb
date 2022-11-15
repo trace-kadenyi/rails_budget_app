@@ -1,51 +1,55 @@
 class ExpendituresController < ApplicationController
-  before_action :set_expenditure, only: %i[show edit create update destroy]
-
   def index
     @expenditures = Expenditure.all
   end
 
   def show
-    @category = Category.find(params[:category_id])
-    @expenditure = @category.expenditures.find(params[:id])
+    @expenditure = Expenditure.find(params[:id])
   end
 
   def new
-    @category = Category.find(params[:category_id])
     @expenditure = Expenditure.new
   end
 
   def edit; end
 
-  # post/expenditures
   def create
-    @category = Category.find(params[:category_id])
     @expenditure = Expenditure.new(expenditure_params)
     @expenditure.user_id = current_user.id
-    @expenditure = CategoryExpenditure.create!(category: @category, expenditure: @expenditure)
 
     respond_to do |format|
       if @expenditure.save
-        format.html { redirect_to category_url(@category), notice: 'Transaction was successfully created.' }
+        @category = CategoryExpenditure.create(expenditure_id: @expenditure.id, category_id: expenditure_category_params[:category_id])
+        # @category.increment_total
+        format.html do
+          redirect_to category_expenditures_path(@category.category_id), notice: 'Expenditure was successfully created.'
+        end
       else
-        format.html { render :new, status: :unprocessable_expenditure }
+        format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
 
   def update
-    if @expenditure.update(expenditure_params)
-      redirect_to @expenditure
-    else
-      render :edit, status: :unprocessable_expenditure
+    respond_to do |format|
+      if @expenditure.update(expenditure_params)
+        format.html { redirect_to category_path(@expenditure.category_id), notice: 'expenditure was successfully updated.' }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+      end
     end
   end
 
-  # DELETE /records/1 or /records/1.json
   def destroy
-    @expenditure = set_expenditure
+    @expenditure = Expenditure.find(params[:id])
+    @expenditure.expenditure_categories.first.decrement_total
     @expenditure.destroy
-    redirect_to category_path(params[:category_id])
+
+    respond_to do |format|
+      format.html do
+        redirect_to category_expenditure_categories_path(@expenditure), notice: 'expenditure was successfully destroyed.'
+      end
+    end
   end
 
   private
@@ -58,4 +62,7 @@ class ExpendituresController < ApplicationController
     params.require(:expenditure).permit(:name, :amount)
   end
 
+  def expenditure_category_params
+    params.require(:expenditure).permit(:category_id)
+  end
 end

@@ -1,12 +1,4 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>expenditures</h1>
-
-<div id="expenditures">
-  <% @expenditures.each do |expenditure| %>
-    <%#= render expenditure %>
-
-    <div id="<%= dom_id expenditure %>">
+<div id="<%= dom_id expenditure %>">
   <p class="container-flud mx-3 px-2 bg-white border-bottom">
     <strong>Name:</strong>
     <%= expenditure.name %>
@@ -22,9 +14,4 @@
     <strong>Total Amount: $</strong>
     <%= expenditure.amount %>
   </p>
-</div>
-    <p>
-      <%#= link_to "Show this expenditure", category_expenditure_path(expenditure.category_id, expenditure) %>
-    </p>
-  <% end %>
 </div>

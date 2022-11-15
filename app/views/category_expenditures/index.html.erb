@@ -1,12 +1,41 @@
-<h1>Category records</h1>
-
-<div id="category_records">
-  <% @category_expenditures.each do |category_expenditure| %>
-    <%= render category_record %>
-    <p>
-      <%= link_to "View", category_expenditure %>
-    </p>
-  <% end %>
+<p style="color: green"><%= notice %></p>
+<div class="category-info">
+  <h1>
+    <%= image_tag @category.icon %>
+    <%= @category.name %> expenditures
+  </h1>
+  <p><%= @category.description %> </p>
 </div>
 
-<%= link_to "New category record", categories_path %>
+<div class="total">
+  <strong>Total Payment: </strong>
+  <strong>$<%= @category.total %></strong>
+</div>
+
+<div class="expense-category">
+    <% if @expenditures.empty? %>
+      <p>There are no expenditures yet.</p>
+    <% else %>
+        <% @expenditures.each do |expenditure| %>
+          <div class="expenditure-list">
+            <%= expenditure.name %>
+            <span>$<%= expenditure.amount %></span>
+            <span>
+            <%= link_to "Show", expenditure_path(expenditure) %> |
+            <%= link_to "Delete", expenditure_path(expenditure), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+            </span>
+            </div>
+        <% end %>
+    <% end %>
+</div>
+
+
+<strong class="mx-4"><%= link_to "Back to category", categories_path %></strong>
+
+<div class="new-form">
+  <p class="new-form-text pt-2"><%= link_to "New expense", new_expenditure_path %></p>
+</div>
+
