@@ -4,4 +4,5 @@ class Category < ApplicationRecord
 
   validates :name, presence: true, length: { in: 1..80 }
   validates :icon, presence: true
+  validates :description, presence: true, length: { in: 1..150 }
 end
