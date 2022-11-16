@@ -4,7 +4,7 @@ RSpec.describe 'User Session', type: :feature do
   describe 'GET /users/sign_in' do
     it 'displays the contents of the page' do
       visit new_user_session_path
-      expect(page).to have_content 'LOG IN'
+      expect(page).to have_content 'Log In'
     end
 
     it 'displays the contents of the page' do
@@ -24,7 +24,7 @@ RSpec.describe 'User Session', type: :feature do
 
     it 'displays the contents of the page' do
       visit new_user_session_path
-      expect(page).to have_button('Log in')
+      expect(page).to have_button('Create User')
     end
 
     it 'displays the contents of the page' do
