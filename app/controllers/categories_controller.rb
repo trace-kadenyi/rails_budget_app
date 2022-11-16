@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    # categories of the current user
+    @categories = current_user.categories.order('created_at DESC')
   end
 
   def show

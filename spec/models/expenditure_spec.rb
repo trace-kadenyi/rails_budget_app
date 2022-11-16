@@ -6,11 +6,6 @@ RSpec.describe Expenditure, type: :model do
       association = described_class.reflect_on_association(:user)
       expect(association.macro).to eq :belongs_to
     end
-
-    it 'should belong to category' do
-      association = described_class.reflect_on_association(:category)
-      expect(association.macro).to eq :belongs_to
-    end
   end
 
   describe 'validations' do
