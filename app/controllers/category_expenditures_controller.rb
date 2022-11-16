@@ -6,6 +6,7 @@ class CategoryExpendituresController < ApplicationController
   def index
     @category = Category.find(params[:category_id])
     @expenditures = @category.category_expenditures.includes(:expenditure).map(&:expenditure)
-    @expenditures = @category.category_expenditures.includes(:expenditure).map(&:expenditure)
+    # order expenditures by most recent
+    @expenditures = @expenditures.sort_by(&:created_at).reverse
   end
 end

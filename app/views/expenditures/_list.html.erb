@@ -1,8 +1,0 @@
-<ul class="d-flex flex-column gap-4">
-  <% @expenditures.each do |expense| %>
-    <li class="border border-light shadow-sm rounded p-3 d-flex justify-content-between">
-      <span><%= expense.name %></span>
-      <span>$<%= expense.amount %></span>
-    </li>
-  <% end %>
-</ul>

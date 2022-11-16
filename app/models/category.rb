@@ -7,15 +7,7 @@ class Category < ApplicationRecord
   validates :icon, presence: true
   validates :description, presence: true, length: { in: 1..150 }
 
-  def recent_expenses
-    expenditures.order(created_at: :desc).limit(5)
-  end
-
   def total_expenses
     expenditures.sum('amount')
   end
-
-  # def expenditures_count
-  #   expenditures.count
-  # end
 end

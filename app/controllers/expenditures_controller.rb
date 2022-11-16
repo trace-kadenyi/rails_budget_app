@@ -1,9 +1,7 @@
 class ExpendituresController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @expenditures = Expenditure.all
-  end
+  def index; end
 
   def show
     @expenditure = Expenditure.find(params[:id])
