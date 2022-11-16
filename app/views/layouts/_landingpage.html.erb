@@ -1,10 +1,10 @@
   <%# logged in user %>
     <% if user_signed_in? %>
-      <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <nav class="navbar is-light has-shadow" role="navigation" aria-label="main navigation">
       <%# logo %>
         <div class="navbar-brand">
           <a class="navbar-item logo" href="/">
-          SmartMoney
+          <strong class='title is-size-2'>SmartMoney</strong>
           </a>
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -15,15 +15,15 @@
       <%# menu %>
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-
-            <%= link_to "Categories", categories_path, class: "navbar-item" %>
+            <%= link_to "CATEGORIES", categories_path, class: "navbar-item" %>
+            <%= link_to "NEW EXPENDITURE", new_expenditure_path, class: "navbar-item" %>
         </div>
       <%# user %>
           <%= link_to(destroy_user_session_path, {:class => "nav-link", :method => :delete}) do  %>
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                  <strong class='button is-warning'>Logout</strong>    
+                  <strong class='button is-danger'>Logout</strong>    
               </div>
             </div>
           </div>
