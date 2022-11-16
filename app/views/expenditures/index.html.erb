@@ -1,3 +1,31 @@
+<section class='section'>
+  <div class='container'>
+      <div class='card'>
+        <div class='card-content'>
+          <div class='media'>
+            <div class='media-content'>
+              <h1 class='title is-size-1 has-text-centered'>
+                <%= @category.name %>
+              </h1>
+                <div class='desc-span'>
+                  <img src="<%= @category.icon %>" alt="<%= @category.name %>" class="image icon">
+                   <p class='subtitle is-5'><%= @category.description %></p>
+                </div>        
+              <hr />
+              <h5 class='subtitle is-size-6 total_cat_amount'> Total Amount:
+                <%#= Total Amount %>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      
+  </div>
+</section>
+
+
+
 <p style="color: green"><%= notice %></p>
 
 <h1>expenditures</h1>
@@ -19,12 +47,12 @@
   </div>
 
   <p class="container-flud mx-3 px-2 bg-white border-bottom">
-    <strong>Total Amount: $</strong>
+    <strong>Total Amount: $ <%= @category.total_price %></strong>
     <%= expenditure.amount %>
   </p>
 </div>
     <p>
-      <%#= link_to "Show this expenditure", category_expenditure_path(expenditure.category_id, expenditure) %>
+      <%= link_to "Show this expenditure", category_expenditure_path(expenditure.category_id, expenditure) %>
     </p>
   <% end %>
 </div>

@@ -4,6 +4,6 @@ class CategoryExpendituresController < ApplicationController
   def index
     @category = Category.find(params[:category_id])
     @expenditures = @category.category_expenditures.includes(:expenditure).map(&:expenditure)
-    @expenditures = @category.expenditure_categories.includes(:expenditure).map(&:expenditure)
+    @expenditures = @category.category_expenditures.includes(:expenditure).map(&:expenditure)
   end
 end

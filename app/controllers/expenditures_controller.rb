@@ -20,9 +20,9 @@ class ExpendituresController < ApplicationController
     respond_to do |format|
       if @expenditure.save
         @category = CategoryExpenditure.create(expenditure_id: @expenditure.id, category_id: expenditure_category_params[:category_id])
-        # @category.increment_total
+
         format.html do
-          redirect_to category_expenditures_path(@category.category_id), notice: 'Expenditure was successfully created.'
+          redirect_to category_category_expenditures_path(@category.category_id), notice: 'Expenditure was successfully created.'
         end
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -33,7 +33,7 @@ class ExpendituresController < ApplicationController
   def update
     respond_to do |format|
       if @expenditure.update(expenditure_params)
-        format.html { redirect_to category_path(@expenditure.category_id), notice: 'expenditure was successfully updated.' }
+        format.html { redirect_to category_path(@expenditure.category_id), notice: 'Expenditure was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -42,12 +42,12 @@ class ExpendituresController < ApplicationController
 
   def destroy
     @expenditure = Expenditure.find(params[:id])
-    @expenditure.expenditure_categories.first.decrement_total
+    # @expenditure.category_expenditures.first.decrement_total
     @expenditure.destroy
 
     respond_to do |format|
       format.html do
-        redirect_to category_expenditure_categories_path(@expenditure), notice: 'expenditure was successfully destroyed.'
+        redirect_to category_category_expenditures_path(@expenditure), notice: 'Expenditure was successfully destroyed.'
       end
     end
   end
