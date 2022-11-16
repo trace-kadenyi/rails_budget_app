@@ -19,10 +19,12 @@ class ExpendituresController < ApplicationController
 
     respond_to do |format|
       if @expenditure.save
-        @category = CategoryExpenditure.create(expenditure_id: @expenditure.id, category_id: expenditure_category_params[:category_id])
+        @category = CategoryExpenditure.create(expenditure_id: @expenditure.id,
+                                               category_id: expenditure_category_params[:category_id])
 
         format.html do
-          redirect_to category_category_expenditures_path(@category.category_id), notice: 'Expenditure was successfully created.'
+          redirect_to category_category_expenditures_path(@category.category_id),
+                      notice: 'Expenditure was successfully created.'
         end
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -33,7 +35,9 @@ class ExpendituresController < ApplicationController
   def update
     respond_to do |format|
       if @expenditure.update(expenditure_params)
-        format.html { redirect_to category_path(@expenditure.category_id), notice: 'Expenditure was successfully updated.' }
+        format.html do
+          redirect_to category_path(@expenditure.category_id), notice: 'Expenditure was successfully updated.'
+        end
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
