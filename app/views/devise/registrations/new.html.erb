@@ -1,7 +1,7 @@
 <div class='section sign'>
   <h2 class='signup-head'>Sign Up</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }, html: { method: :post }) do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs signin">

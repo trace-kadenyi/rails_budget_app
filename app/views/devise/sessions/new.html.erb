@@ -1,7 +1,7 @@
 <div class='section sign'>
 <h2 class='signup-head'>Log In</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }, html: { method: :post }) do |f| %>
   <div class="form-inputs signin">
     <%= f.input :email,
                 required: false,
