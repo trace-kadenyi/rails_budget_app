@@ -1,15 +1,19 @@
-<div class='section'>
+<div class='section new_cat'>
   <%= simple_form_for @category, url: categories_path, data: {turbo: false}, method: :post do |f| %>
   <div class='field'>
     <div class='control'>
       <%= f.input :name, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label' } %>
     </div>
   </div>
-   <div class='field'>
-    <div class='control'>
-      <%= f.input :icon, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label' } %>
+     <div class="field mt-4">
+      <%= f.label :icon, class: "block text-gray-700 text-m font-bold mb-2 p-5" %>
+      <%= f.select :icon, [
+        ["Family", "https://static.vecteezy.com/system/resources/previews/002/978/601/original/a-sticker-template-with-happy-big-family-members-free-vector.jpg"],["Beauty", "https://cdn.imgbin.com/4/17/8/imgbin-cosmetics-make-up-cartoon-editor-girl-makeup-woman-with-makeup-accessory-illustration-chu9sJQwRu2NRdmfnk3zpX3FU.jpg" ],["Groceries", "https://thumbs.dreamstime.com/b/person-pushing-trolley-vegetables-shopping-cart-full-40518137.jpg"],
+        ["Education", "https://media.istockphoto.com/id/1264166530/vector/vector-of-a-man-paying-for-his-education.jpg?s=612x612&w=0&k=20&c=0EoctbTY4yRZDTw-CH3GkOv1nd1a7LtolNiZsQiuluc="],["Medical", "https://cdn-icons-png.flaticon.com/512/564/564276.png"], ["Car expenses", "https://thumbs.dreamstime.com/z/car-fuel-economy-gasoline-expense-set-flat-vector-illustration-isolated-concept-people-petrol-station-cartoon-white-216000058.jpg"],
+        ["Housing", "https://img.freepik.com/premium-vector/independent-use-solar-panels-residential-reduce-electricity-costs-protect-environment_4968-1769.jpg?auto=format&h=200"],["Savings", "https://img.favpng.com/25/20/0/money-saving-piggy-bank-clip-art-png-favpng-Utbv2bnLbkRpF6JwwbQukr7iL.jpg"], ["Holiday", "https://st2.depositphotos.com/1832477/10751/v/950/depositphotos_107517790-stock-illustration-travel-icons-set-cartoon-elements.jpg"], ["Investments", "https://www.billdu.com/wp-content/uploads/2021/06/Billdu_Business-expense-tracking-101-complete-guide.png"],
+        ["Other", "https://www.travelperk.com/wp-content/uploads/Guide_Managing-business-travel-expenses-1.png"]
+        ], class:'form-control', placeholder: "Icon" %>
     </div>
-  </div>
   <div class='field'>
     <div class='control'>
       <%= f.input :description, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label' } %>
