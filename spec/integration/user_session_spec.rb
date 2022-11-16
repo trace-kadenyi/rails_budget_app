@@ -36,11 +36,6 @@ RSpec.describe 'User Session', type: :feature do
       visit new_user_session_path
       expect(page).to have_content 'Forgot your password?'
     end
-
-    it 'displays the contents of the page' do
-      visit new_user_session_path
-      expect(page).to have_content "Didn't receive confirmation instructions?"
-    end
   end
 
   describe 'POST /users/sign_in' do

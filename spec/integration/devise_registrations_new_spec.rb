@@ -36,11 +36,6 @@ RSpec.describe 'Registrations New', type: :feature do
       visit new_user_registration_path
       expect(page).to have_content 'Log in'
     end
-
-    it 'displays the contents of the page' do
-      visit new_user_registration_path
-      expect(page).to have_content "Didn't receive confirmation instructions?"
-    end
   end
 
   describe 'Sign up a new user' do
