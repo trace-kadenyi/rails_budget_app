@@ -1,0 +1,49 @@
+<div class='section new_transaction'>
+<h3 class='title is-size-4'>Add New Transaction</h3>
+<%= form_with(model: expenditure, url: expenditures_path, local: true) do |f| %>
+<%# display errors %>
+  <% if expenditure.errors.any? %>
+    <div class='error'>
+      <h4><%= pluralize(expenditure.errors.count, "error") %> prohibited this expenditure from being saved:</h4>
+      <ul>
+        <% expenditure.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+  <div class='field'>
+    <div class='control'>
+      <%= f.text_field :name, class:'form-control mb-3 p-2', placeholder: 'Enter name'%>
+    </div>
+  </div>
+
+    <div class='field'>
+    <div class='control'>
+      <%= f.text_field :amount, class:'form-control mb-3 p-2', placeholder: "Amount" %>
+    </div>
+    </div>
+
+    <div class="field mb-4">
+    <div class="control">
+      <%= f.label :category, class: "mb-2" %>
+      <%= f.collection_select :category_id, 
+      Category.where("user_id = ?", current_user.id).order(:name), :id, :name, class:'form-control mb-3 p-2' %>
+    </div>
+    </div>
+  <div>
+
+  <div>
+  <%= f.button :submit, class: 'button is-info' %>
+  </div>
+<% end %>
+</div>
+
+<div class='level-left'>
+    <p class='level-item'>
+      <%# back button link %>
+      <%= link_to '<', :back, class: 'button is-info back' %>
+    </p>
+  </div>
