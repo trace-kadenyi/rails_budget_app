@@ -1,5 +1,8 @@
-<div class='section new_transaction'>
-<h3 class='title is-size-4'>Add New Transaction</h3>
+ <%# back button link %>
+      <%= link_to '<', :back, class: 'button is-info is-size-5 mt-5' %>
+
+<div class='new_cat  new_transaction'>
+<h3 class='title is-size-4 has-text-centered'>Add New Transaction</h3>
 <%= form_with(model: expenditure, url: expenditures_path, local: true) do |f| %>
 <%# display errors %>
   <% if expenditure.errors.any? %>
@@ -40,10 +43,3 @@
   </div>
 <% end %>
 </div>
-
-<div class='level-left'>
-    <p class='level-item'>
-      <%# back button link %>
-      <%= link_to '<', :back, class: 'button is-info back' %>
-    </p>
-  </div>

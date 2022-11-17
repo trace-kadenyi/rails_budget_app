@@ -8,17 +8,16 @@
           </a>
         </div>
       <%# menu %>
-        <div class="navbar-menu is-active">
+        <div class="navbar-menu is-active has-background-info">
           <div class="navbar-start">
             <%= link_to "CATEGORIES", categories_path, class: "navbar-item" %>
-            <%= link_to "NEW EXPENDITURE", new_expenditure_path, class: "navbar-item" %>
         </div>
       <%# user %>
           <%= link_to(destroy_user_session_path, {:class => "nav-link", :method => :delete}) do  %>
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                  <strong class='button is-danger'>Logout</strong>    
+                  <strong class='button is-light'>Logout</strong>    
               </div>
             </div>
           </div>
@@ -26,13 +25,6 @@
         </div>
       </nav>
     <% else %>
-       <nav class="navbar is-info has-shadow guest_nav" role="navigation" aria-label="main navigation">
-      <%# logo %>
-        <div class="navbar-brand">
-          <a class="navbar-item logo" href="/">
-          <strong class='title is-size-2 smart_logo'>SmartMoney</strong>
-          </a>
-        </div>     
+      <nav class="navbar is-info has-shadow guest_nav" role="navigation" aria-label="main navigation">        
       </nav>
-
     <% end %>

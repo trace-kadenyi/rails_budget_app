@@ -1,67 +1,52 @@
-<section class='section transactions-sect'>
+<div class='has-background-info has-text-white'>
+  <h1 class='title is-size-2 has-text-centered has-text-white'>TRANSACTIONS</h1>
+</div>
+<div class='title-amount p-3'>
+<div class='title_div'>
+  <p class='is-size-4'><%= @category.name %> expenses
+  <p class='cat_description'><%= @category.description %></p>
+  </p>   
+</div>
+<div>
+  <p class='is-size-4 total_cat_amount'> $<%= @category.total_expenses %></p>
+  </div>
+</div>
+
+<section class='transactions-sect'>
 <div class='container'>
-<%# return to category %>
-<%= link_to 'Back to Categories', categories_path, class: 'button is-info is-small mb-2' %>
-
- <div class='card trans-title has-background-info has-text-white'>
-    <div class='card-content'>
-      <div class='media'>
-        <div class='media-content'>
-        <h1 class='title is-size-2 has-text-centered has-text-white'>TRANSACTIONS</h1>
-        <p class='subtitle is-size-6 has-text-white has-text-centered'>Most recent</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <div class='card'>
-    <div class='card-content'>
-      <div class='media'>
-        <div class='media-content'>
-          <div class='title-amount'>
-          <p class='is-size-4'>
-            <%= @category.name %> expenses
-          </p>      
-          <p class='is-size-4 total_cat_amount'> $<%= @category.total_expenses %></p>
-          </div>
-           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
   <% if @expenditures.empty? %>
-              <p class='subtitle is-5'>There are currently no expenditures</p>
-            <% else %>
-
-    <% @expenditures.each do |expenditure| %>
-      
- <div class='card trans_card mt-5'>
-    <div class='card-content'>
-      <div class='media'>
-        <div class='media-content'>
-        <div class='para'>
-          <div class='exp-name'>
-            <p><%= expenditure.name %></p>
-            <p class='date'><%= expenditure.created_at.strftime("%d/%m/%Y") %></p>
-          </div>
-          <div>
-            <p> $<%= expenditure.amount %></p>
+      <p class='subtitle is-5'>There are currently no expenditures</p>
+  <% else %>
+    <% @expenditures.each do |expenditure| %>  
+    <div class='card trans_card mt-5'>
+        <div class='card-content'>
+          <div class='media'>
+            <div class='media-content'>
+            <div class='para'>
+              <div class='exp-name'>
+                <p><%= expenditure.name %></p>
+                <p class='date'><%= expenditure.created_at.strftime("%d/%m/%Y") %></p>
+              </div>
+              <div>
+                <p> $<%= expenditure.amount %></p>
+              </div>
+              <div>
+                <%= link_to "View", expenditure_path(expenditure), class: 'button is-small is-info' %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 <% end %>
 <% end %>
 
          
 <%# add new transaction %>
-<div class='level-center'>
+<div class='new_category has-background-info'>
     <p class='level-item'>
-      <%= link_to "Add New Transaction", new_expenditure_path, class: 'button is-info add_trans' %>
+      <%= link_to "ADD NEW TRANSACTION", new_expenditure_path, class: 'has-text-white' %>
     </p>
   </div>
 </section>
