@@ -188,6 +188,11 @@
   border-radius: 10px;
 }
 
+.exp-name {
+  display: flex;
+  flex-direction: column;
+}
+
 .back {
   margin-top: 20px;
 }
@@ -208,6 +213,21 @@
 .smart_logo {
   color: white;
   font-style: italic;
+}
+
+.title-amount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.para {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.date {
+  font-size: 0.8rem;
 }
 
 @media screen and (max-width: 700px) {
