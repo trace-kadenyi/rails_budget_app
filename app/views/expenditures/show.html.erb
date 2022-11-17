@@ -7,7 +7,7 @@
             <h1 class='title is-size-1 has-text-centered'>
               <%= @expenditure.name %>
             </h1>
-            <p><strong>Date of transaction:</strong> <%= @expenditure.created_at %> </p>
+            <p><strong>Time of transaction:</strong> <%= @expenditure.created_at %> </p>
             <p><strong>Amount:</strong> $<%= @expenditure.amount %></p>
           </div>
         </div>
@@ -18,6 +18,6 @@
 
   <div class='level-left'>
     <p class='level-item'>
-      <%= link_to "Back to Expenditures", :back, class: 'button is-primary is-small' %>
+      <%= link_to "Back to Expenditures", :back, class: 'button is-info is-small' %>
     </p>
   </div>

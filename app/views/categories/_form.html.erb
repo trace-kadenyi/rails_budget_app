@@ -1,4 +1,8 @@
-<div class='section new_cat'>
+<%# add a back button to categories page %>
+<%= link_to '<', categories_path, class: 'button is-info is-size-5 mt-5' %>
+
+<div class='new_cat'>
+<h3 class='title is-size-4 has-text-centered'>Add New Category</h3>
   <%= simple_form_for @category, url: categories_path, data: {turbo: false}, method: :post do |f| %>
   <div class='field'>
     <div class='control'>
@@ -24,5 +28,3 @@
   </div>
   <% end %>
 </div>
-<%# add a back button to categories page %>
-<%= link_to '<', categories_path, class: 'button is-info' %>
