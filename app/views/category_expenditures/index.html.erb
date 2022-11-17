@@ -7,11 +7,12 @@
     <div class='card-content'>
       <div class='media'>
         <div class='media-content'>
-          <h1 class='title is-size-1 has-text-centered'>
+          
+          <h1 class='title is-size-2 has-text-centered'>
             <%= @category.name %> expenses
           </h1>
             <div class='desc-span'>
-              <img src="<%= @category.icon %>" alt="<%= @category.name %>" class="image icon">
+              <img src="<%= @category.icon %>" alt="<%= @category.name %>" class="image icon show_icon">
                <p class='subtitle is-5'><%= @category.description %></p>
             </div>        
           <hr />
@@ -39,7 +40,7 @@
                       <td><%= expenditure.name %></td>
                       <td>$<%= expenditure.amount %></td>
                       <td><%= expenditure.created_at.strftime("%d/%m/%Y") %></td>
-                      <td>
+                      <td class='btn_col'>
                       <%= link_to "View", expenditure_path(expenditure), class: 'button is-small is-info' %>
                     <%= link_to "Delete", expenditure_path(expenditure), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'button is-small is-danger' %>     
                       </td>
