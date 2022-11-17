@@ -9,22 +9,12 @@ RSpec.describe 'User Session', type: :feature do
 
     it 'displays the contents of the page' do
       visit new_user_session_path
-      expect(page).to have_content 'Email'
-    end
-
-    it 'displays the contents of the page' do
-      visit new_user_session_path
-      expect(page).to have_content 'Password'
-    end
-
-    it 'displays the contents of the page' do
-      visit new_user_session_path
       expect(page).to have_content 'Remember me'
     end
 
     it 'displays the contents of the page' do
       visit new_user_session_path
-      expect(page).to have_button('Create User')
+      expect(page).to have_button('Log In')
     end
 
     it 'displays the contents of the page' do
