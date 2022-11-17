@@ -2,7 +2,12 @@
   <h1 class='title is-size-3 has-text-centered mt-5 cat_head'>
    Categories
   </h1>
+  <%# if no categories %>
+
   <div class='container cat-sect'>
+   <% if @categories.empty? %>
+    <p class='subtitle is-5 has-text-centered mt-5'>There are currently no categories</p>
+  <% else %>
     <% @categories.each do |category| %>
       <div class='card'>
         <div class='card-content'>
@@ -29,6 +34,7 @@
         </div>
       </div>
     <% end %>
+  <% end %>
   </div>
   <%# link to add new category %>
    <div class='new_category has-background-info'>
