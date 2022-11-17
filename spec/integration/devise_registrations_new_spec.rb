@@ -4,22 +4,37 @@ RSpec.describe 'Registrations New', type: :feature do
   describe 'GET /users/sign_up' do
     it 'displays the contents of the page' do
       visit new_user_registration_path
-      expect(page).to have_content 'Sign up'
+      expect(page).to have_content 'Sign Up'
     end
 
     it 'displays the contents of the page' do
       visit new_user_registration_path
-      expect(page).to have_button('Sign up')
+      expect(page).to have_content 'Name'
+    end
+
+    it 'displays the contents of the page' do
+      visit new_user_registration_path
+      expect(page).to have_content 'Email'
+    end
+
+    it 'displays the contents of the page' do
+      visit new_user_registration_path
+      expect(page).to have_content 'Password'
+    end
+
+    it 'displays the contents of the page' do
+      visit new_user_registration_path
+      expect(page).to have_content 'Password confirmation'
+    end
+
+    it 'displays the contents of the page' do
+      visit new_user_registration_path
+      expect(page).to have_button('Create User')
     end
 
     it 'displays the contents of the page' do
       visit new_user_registration_path
       expect(page).to have_content 'Log in'
-    end
-
-    it 'displays the contents of the page' do
-      visit new_user_registration_path
-      expect(page).to have_content "Didn't receive confirmation instructions?"
     end
   end
 
