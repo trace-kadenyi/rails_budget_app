@@ -123,31 +123,6 @@
   color: red;
 }
 
-.user_form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-.form-control {
-  display: block;
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 0.375rem;
-}
-
 .signup-head {
   font-size: 1.2rem;
   font-weight: bold;
@@ -174,6 +149,31 @@
   margin: 0 auto;
 }
 
+.user_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.375rem;
+}
+
 .new_transaction {
   width: 100%;
   display: flex;
@@ -188,8 +188,18 @@
   border-radius: 10px;
 }
 
+.exp-name {
+  display: flex;
+  flex-direction: column;
+}
+
 .back {
   margin-top: 20px;
+}
+
+.new_cat {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .guest_nav {
@@ -205,9 +215,19 @@
   font-style: italic;
 }
 
-.new_cat {
-  width: 80%;
-  margin: 0 auto;
+.title-amount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.para {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.date {
+  font-size: 0.8rem;
 }
 
 @media screen and (max-width: 700px) {

@@ -3,57 +3,61 @@
 <%# return to category %>
 <%= link_to 'Back to Categories', categories_path, class: 'button is-info is-small mb-2' %>
 
+ <div class='card trans-title has-background-info has-text-white'>
+    <div class='card-content'>
+      <div class='media'>
+        <div class='media-content'>
+        <h1 class='title is-size-2 has-text-centered has-text-white'>TRANSACTIONS</h1>
+        <p class='subtitle is-size-6 has-text-white has-text-centered'>Most recent</p>
+      </div>
+    </div>
+  </div>
+</div>
+
   <div class='card'>
     <div class='card-content'>
       <div class='media'>
         <div class='media-content'>
-          <h1 class='title is-size-1 has-text-centered'>
+          <div class='title-amount'>
+          <p class='is-size-4'>
             <%= @category.name %> expenses
-          </h1>
-            <div class='desc-span'>
-              <img src="<%= @category.icon %>" alt="<%= @category.name %>" class="image icon show_icon">
-               <p class='subtitle is-5'><%= @category.description %></p>
-            </div>        
-          <hr />
-          <h5 class='subtitle is-size-6 total_cat_amount'> Total Amount: $<%= @category.total_expenses %></h5>
-          <hr />
+          </p>      
+          <p class='is-size-4 total_cat_amount'> $<%= @category.total_expenses %></p>
+          </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-          <%# table to display expenses %>
-          <div>
-            <% if @expenditures.empty? %>
+  <% if @expenditures.empty? %>
               <p class='subtitle is-5'>There are currently no expenditures</p>
             <% else %>
-              <h3 class='title is-size-4 has-text-centered'>List of Transactions</h3>
-              <table class='table is-bordered is-striped is-narrow is-hoverable is-fullwidth'>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Amount</th>
-                    <th>Date</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% @expenditures.each do |expenditure| %>
-                    <tr>
-                      <td><%= expenditure.name %></td>
-                      <td>$<%= expenditure.amount %></td>
-                      <td><%= expenditure.created_at.strftime("%d/%m/%Y") %></td>
-                      <td class='btn_col'>
-                      <%= link_to "View", expenditure_path(expenditure), class: 'button is-small is-info' %>
-                    <%= link_to "Delete", expenditure_path(expenditure), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'button is-small is-danger' %>     
-                      </td>
-                    </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            <% end %>
+
+    <% @expenditures.each do |expenditure| %>
+      
+ <div class='card trans_card mt-5'>
+    <div class='card-content'>
+      <div class='media'>
+        <div class='media-content'>
+        <div class='para'>
+          <div class='exp-name'>
+            <p><%= expenditure.name %></p>
+            <p class='date'><%= expenditure.created_at.strftime("%d/%m/%Y") %></p>
+          </div>
+          <div>
+            <p> $<%= expenditure.amount %></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<% end %>
+<% end %>
+
+         
 <%# add new transaction %>
 <div class='level-center'>
     <p class='level-item'>
