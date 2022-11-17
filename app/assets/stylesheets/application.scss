@@ -123,11 +123,6 @@
   color: red;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-}
-
 .signup-head {
   font-size: 1.2rem;
   font-weight: bold;
@@ -171,4 +166,32 @@ nav {
 .new_cat {
   width: 80%;
   margin: 0 auto;
+}
+
+
+@media screen and (max-width: 700px) {
+  .title-icon {
+    flex-direction: column;
+  }
+
+  .desc-span {
+    display: block;
+  }
+
+  .show_icon {
+    float: left;
+    margin-right: 3px;
+  }
+
+  table {
+    font-size: 3.5vw;
+  }
+
+  .btn_col {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+
 }

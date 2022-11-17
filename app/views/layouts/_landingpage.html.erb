@@ -6,14 +6,9 @@
           <a class="navbar-item logo" href="/">
           <strong class='title is-size-2'>SmartMoney</strong>
           </a>
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
         </div>
       <%# menu %>
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-menu is-active">
           <div class="navbar-start">
             <%= link_to "CATEGORIES", categories_path, class: "navbar-item" %>
             <%= link_to "NEW EXPENDITURE", new_expenditure_path, class: "navbar-item" %>
