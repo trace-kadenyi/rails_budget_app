@@ -18,7 +18,7 @@
               <div class='actions mt-5'>
                 <span class='subtitle is-5'>
                 <%# link to edit %>
-                <%= link_to 'EDIT', edit_category_path(category), class: 'button is-primary is-small' %>
+                <%= link_to 'EDIT', edit_category_path(category), class: 'button is-info is-small' %>
                 </span>          
                 <span class='subtitle is-5'>
                   <%= link_to 'REMOVE', category_path(category.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'button is-danger is-small' %>
@@ -33,7 +33,7 @@
   <%# link to add new category %>
    <div class='level-right'>
     <p class='level-item'>
-      <%= link_to "Add New Category", new_category_path, class: 'button is-primary add_cat' %>
+      <%= link_to "Add New Category", new_category_path, class: 'button is-info add_cat' %>
     </p>
   </div>
 </section>
