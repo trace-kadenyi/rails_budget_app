@@ -191,4 +191,14 @@
     flex-direction: column;
     gap: 5px;
   }
+
+  .signin > * {
+    margin: 1rem;
+    padding: 1rem 0;
+    width: 60%;
+  }
+
+  .sign {
+    width: 95%;
+  }
 }
