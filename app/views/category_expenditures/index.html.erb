@@ -2,15 +2,15 @@
   <h1 class='title is-size-2 has-text-centered has-text-white'>TRANSACTIONS</h1>
 </div>
 <div class='title-amount p-3'>
-<div class='title_div'>
-  <p class='is-size-4'><%= @category.name %> expenses
-  <p class='cat_description'><%= @category.description %></p>
-  </p>   
-</div>
-<div>
-  <p class='is-size-4 total_cat_amount'> $<%= @category.total_expenses %></p>
+  <div class='title_div'>
+    <p class='is-size-4'><%= @category.name %> expenses
+    <p class='cat_description'><%= @category.description %></p>
+    </p>   
   </div>
-</div>
+  <div>
+    <p class='is-size-4 total_cat_amount'> $<%= @category.total_expenses %></p>
+    </div>
+  </div>
 
 <section class='transactions-sect'>
 <div class='container'>
@@ -31,7 +31,7 @@
               <div>
                 <p> $<%= expenditure.amount %></p>
               </div>
-              <div>
+              <div class='view'>
                 <%= link_to "View", expenditure_path(expenditure), class: 'button is-small is-info' %>
               </div>
             </div>

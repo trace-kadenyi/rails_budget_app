@@ -94,12 +94,6 @@
   height: auto;
 }
 
-.desc-span {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
 .new_category {
   width: 100vw;
   padding: 30px;
@@ -111,14 +105,6 @@
 
 .transactions-sect {
   position: relative;
-}
-
-.add_trans {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 30px auto 0;
 }
 
 .error {
@@ -170,10 +156,6 @@
   flex-direction: column;
 }
 
-.back {
-  margin-top: 20px;
-}
-
 .guest_nav {
   display: flex;
   flex-direction: row;
@@ -206,9 +188,13 @@
 }
 
 .para {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  justify-content: end;
+}
+
+.view {
+  justify-self: end;
 }
 
 .date {
@@ -234,34 +220,15 @@
     flex-direction: column;
   }
 
-  .desc-span {
-    display: block;
-  }
-
   .cats-sect {
     width: 100%;
   }
 
   .cat_description {
-  width: 80%;
-}
+    width: 80%;
+  }
 
   .new_cat form {
     width: 100%;
-  }
-
-  .show_icon {
-    float: left;
-    margin-right: 3px;
-  }
-
-  table {
-    font-size: 3.5vw;
-  }
-
-  .btn_col {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
   }
 }
