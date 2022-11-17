@@ -20,7 +20,9 @@
     </div>
   </div>
   <div>
-    <%= f.button :submit, class: 'button is-primary' %>
+    <%= f.button :submit, class: 'button is-info' %>
   </div>
   <% end %>
 </div>
+<%# add a back button to categories page %>
+<%= link_to '<', categories_path, class: 'button is-info' %>

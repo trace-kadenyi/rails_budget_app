@@ -36,7 +36,14 @@
   <div>
 
   <div>
-  <%= f.button :submit, class: 'button is-primary' %>
+  <%= f.button :submit, class: 'button is-info' %>
   </div>
 <% end %>
 </div>
+
+<div class='level-left'>
+    <p class='level-item'>
+      <%# back button link %>
+      <%= link_to '<', :back, class: 'button is-info back' %>
+    </p>
+  </div>

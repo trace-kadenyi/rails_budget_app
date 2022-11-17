@@ -1,10 +1,10 @@
   <%# logged in user %>
     <% if user_signed_in? %>
-      <nav class="navbar is-light has-shadow" role="navigation" aria-label="main navigation">
+      <nav class="navbar is-info has-shadow" role="navigation" aria-label="main navigation">
       <%# logo %>
         <div class="navbar-brand">
           <a class="navbar-item logo" href="/">
-          <strong class='title is-size-2'>SmartMoney</strong>
+          <strong class='title is-size-2 smart_logo'>SmartMoney</strong>
           </a>
         </div>
       <%# menu %>
@@ -25,4 +25,14 @@
           <% end %>
         </div>
       </nav>
+    <% else %>
+       <nav class="navbar is-info has-shadow guest_nav" role="navigation" aria-label="main navigation">
+      <%# logo %>
+        <div class="navbar-brand">
+          <a class="navbar-item logo" href="/">
+          <strong class='title is-size-2 smart_logo'>SmartMoney</strong>
+          </a>
+        </div>     
+      </nav>
+
     <% end %>
