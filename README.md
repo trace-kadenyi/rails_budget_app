@@ -14,6 +14,11 @@ The Ruby on Rails application that allows the user to:
 - PostgreSQL
 - Rspec
 
+## Preview
+![image](https://user-images.githubusercontent.com/40690789/204035640-b812a53b-573b-4fff-8e85-6ddbe82eb508.png)
+![categories](https://user-images.githubusercontent.com/40690789/204034760-e9270d17-1794-4276-800f-fca0e7e62615.png)
+![transactions](https://user-images.githubusercontent.com/40690789/204034779-af6fca23-cd2c-4880-8348-76b865afeddb.png)
+
 ## Live Demo
 [LIVE DEMO LINK](https://smart-money-72362.herokuapp.com/)
 
